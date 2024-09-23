@@ -1,0 +1,100 @@
+<?php
+include('constancia.php');
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>CONSTANCIA DE EXAMEN</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script>
+ function disableButton(button) {
+     button.disabled = true;
+     button.value = "submitting...."
+     button.form.submit();
+}
+</script>
+</head>
+
+<body>
+<div class="container">
+  <h2>Constancia de Examen</h2>
+  <p>Debe completar, descargar el siguiente formulario y enviarselo a su docente para que lo firme</p>
+  <br />
+   <form action="constancia.php" method="POST">
+
+<label for="nombre">Fecha:</label>
+<input type="date" name="fecha" class="form-control" id="fecha" aria-describedby="fecha" placeholder="Ingrese fecha del examen">
+
+
+
+<label for="nombre">Nombre:</label>
+	<input type="textarea" name="nom" class="form-control" id="nom" aria-describedby="nom" placeholder="Ingrese sus nombres y apellido">
+
+
+
+	<label for="legajo">Legajo:</label>
+	<input type="textarea" name="legajo" class="form-control" id="legajo" aria-describedby="legajo" placeholder="Ingrese su número de legajo">
+
+
+  <label for="dni">DNI: </label>
+  <input type="text" name="dni" class="form-control" id="dni" aria-describedby="dniHelp" placeholder="Ingrese su numero de documento">
+  
+<label for="email_alumno">email: </label>
+  <input type="text" name="email_alumno" class="form-control" id="email_alumno" aria-describedby="email_alumnoHelp" placeholder="Ingrese su dirección de correo">  
+
+<!--</span> -->
+<span>
+  <label>Examen:</label>
+  <select class="form-control" name="examen" id="examen">
+    <option value="Parcial">Parcial</option>
+    <option value="Final">Final</option>
+    <option value="Recuperatorio">Recuperatorio</option>
+   </select>
+
+   <label>Asignatura:</label>
+   <input type="textarea" name="asignatura" class="form-control" id="asignatura" aria-describedby="asignatura" placeholder="Ingrese que asignatura fue la que rindio">
+
+
+	<label>Carrera:</label>
+	<select class="form-control" name="carrera" id="carrera">
+		<option value="Ingeniería industrial">Ingeniería Industrial</option>
+		<option value="Ingeniería Química">Ingeniería Química</option>
+		<option value="Ingeniería Electromecánica">Ingeniería Electromecánica</option>
+		<option value="Ingeniería Pesquera">Ingeniería Pesquera</option>
+		<option value="Tec. Universitaria en Programación">Tec. Universitaria en Programación</option>
+ 	   </select>
+
+
+  <label for="dni">Docente: </label>
+  <input type="text" name="docente" class="form-control" id="docente" aria-describedby="docenteHelp" placeholder="Ingrese con que Docente rindio">
+
+<label for="email_docente">email Docente: </label>
+  <input type="text" name="email_docente" class="form-control" id="email_docente" aria-describedby="email_docenteHelp" placeholder="Ingrese dirección de correo del docente">  
+
+  </span>
+
+    
+<!-- </span> -->
+<br /><br />
+<div class="alert alert-primary" role="alert">
+  La constancia sera enviada por correo para que la firmen, al docente en el caso de examenes parciales o recuperatorios, y en el caso de que sea examen final sera enviada a la dirección académica.
+  En ambos casos una vez firmada sera enviada al alumno
+</div>
+
+
+<br /><br />
+<div class="form-group">
+	<input type="submit" name="btnADD" id="btnADD" value="Enviar" onclick="disableButton(this)"/>
+<!--	<input type="submit" value="Enviar"/> -->
+	<input type="reset" value="Resetear" />
+</div>
+   </form>
+ </div>
+ <br /><br /><br />
+</body>
+</html>
